@@ -1,22 +1,5 @@
 require 'pry'
 
-# given that holiday_hash looks like this:
-holiday_hash = {
-  :winter => {
-    :christmas => ["Lights", "Wreath"],
-    :new_years => ["Party Hats"]
-  },
-  :summer => {
-    :fourth_of_july => ["Fireworks", "BBQ"]
-  },
-  :fall => {
-    :thanksgiving => ["Turkey"]
-  },
-  :spring => {
-    :memorial_day => ["BBQ"]
-  }
-}
-
 def second_supply_for_fourth_of_july(holiday_hash)
   holiday_supplies[:summer][:fourth_of_july][1]
 end
@@ -28,7 +11,6 @@ def add_supply_to_winter_holidays(holiday_hash, supply)
     end
   end
 end
-
 
 def add_supply_to_memorial_day(holiday_hash, supply)
   holiday_hash[:spring][:memorial_day] << supply
@@ -64,8 +46,6 @@ def all_supplies_in_holidays(holiday_hash)
 end
 
 def all_holidays_with_bbq(holiday_hash)
-  # return an array of holiday names (as symbols) where supply lists
-  # include the string "BBQ"
   holiday_array = []
   holiday_hash.each do |season, holiday|
     holiday.each do |holiday, supplies|
